@@ -31,7 +31,7 @@ def cifar_10_vit_base():
     EMBED_DIM = 128
     NUM_PATCHES = (IMG_SIZE // PATCH_SIZE) ** 2
     
-    train_dataloader, test_dataloader = get_SHVN_dataloader(batch_size=BATCH_SIZE, num_workers=20)
+    train_dataloader, test_dataloader = get_cifar10_dataloader(batch_size=BATCH_SIZE, num_workers=20)
     
     STEPS_PER_EPOCH = len(train_dataloader)
     
@@ -80,7 +80,7 @@ def cifar_10_vit_lrp():
     EMBED_DIM = 128
     NUM_PATCHES = (IMG_SIZE // PATCH_SIZE) ** 2
     
-    train_dataloader, test_dataloader = get_SHVN_dataloader(batch_size=BATCH_SIZE, num_workers=20)
+    train_dataloader, test_dataloader = get_cifar10_dataloader(batch_size=BATCH_SIZE, num_workers=20)
     
     STEPS_PER_EPOCH = len(train_dataloader)
     
@@ -164,7 +164,7 @@ def cifar_10_vit_unstructured_pruning():
     EMBED_DIM = 128
     NUM_PATCHES = (IMG_SIZE // PATCH_SIZE) ** 2
     
-    train_dataloader, test_dataloader = get_SHVN_dataloader(batch_size=BATCH_SIZE, num_workers=20)
+    train_dataloader, test_dataloader = get_cifar10_dataloader(batch_size=BATCH_SIZE, num_workers=20)
     
     STEPS_PER_EPOCH = len(train_dataloader)
     
@@ -223,7 +223,7 @@ def cifar_10_vit_lottery_ticket():
     EMBED_DIM = 128
     NUM_PATCHES = (IMG_SIZE // PATCH_SIZE) ** 2
     
-    train_dataloader, test_dataloader = get_SHVN_dataloader(batch_size=BATCH_SIZE, num_workers=20)
+    train_dataloader, test_dataloader = get_cifar10_dataloader(batch_size=BATCH_SIZE, num_workers=20)
     
     STEPS_PER_EPOCH = len(train_dataloader)
     
@@ -323,7 +323,7 @@ def cifar_10_vit_early_bird():
     EMBED_DIM = 128
     NUM_PATCHES = (IMG_SIZE // PATCH_SIZE) ** 2
     
-    train_dataloader, test_dataloader = get_SHVN_dataloader(batch_size=BATCH_SIZE, num_workers=20)
+    train_dataloader, test_dataloader = get_cifar10_dataloader(batch_size=BATCH_SIZE, num_workers=20)
     
     STEPS_PER_EPOCH = len(train_dataloader)
 
@@ -398,8 +398,8 @@ def cifar_10_vit_early_bird():
             trainer.train(train_dataloader, test_dataloader, EPOCHS, save_every=None)
 
 if __name__ == "__main__":
-    #cifar_10_vit_base()
-    #cifar_10_vit_lrp()
-    #cifar_10_vit_unstructured_pruning()
-    #cifar_10_vit_lottery_ticket()
+    cifar_10_vit_base()
+    cifar_10_vit_lrp()
+    cifar_10_vit_unstructured_pruning()
+    cifar_10_vit_lottery_ticket()
     cifar_10_vit_early_bird()
